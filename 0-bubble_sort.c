@@ -2,7 +2,8 @@
 #include "sort.h"
 
 /**
- * bubble_sort - Trie un tableau d'entiers en ordre croissant en utilisant le tri à bulles
+ * bubble_sort - Trie un tableau d'entiers en ordre croissant
+ * en utilisant le tri à bulles
  * @array: Le tableau à trier
  * @size: La taille du tableau
  */
