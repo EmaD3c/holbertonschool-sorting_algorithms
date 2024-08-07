@@ -1,18 +1,17 @@
-#include <stdio.h>
 #include "sort.h"
 
 /**
  * bubble_sort - Trie un tableau d'entiers en ordre croissant
- * en utilisant le tri à bulles
- * @array: Le tableau à trier
- * @size: La taille du tableau
+ *                en utilisant l'algorithme de tri à bulles.
+ * @array: Tableau d'entiers à trier.
+ * @size: Taille du tableau.
  */
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 	int tmp;
 
-	/* Vérifie si le tableau est NULL ou contient moins de 2 éléments */
+	/* Si le tableau est NULL ou de taille inférieure à 2, ne rien faire */
 	if (array == NULL || size < 2)
 		return;
 
