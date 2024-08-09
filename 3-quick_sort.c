@@ -11,39 +11,40 @@
  */
 int lomuto_partition(int *array, int start, int end, size_t size)
 {
-	int temp;
-	/*Le pivot est choisi comme le dernier élément du tableau*/
-	int pivot_value = array[end];
-	int j = start;
-	int i;
+  int temp;
+  int pivot_value;
+  /*Le pivot est choisi comme le dernier élément du tableau*/
+  pivot_value = array[end];
+  int j = start;
+  int i;
 
-	for (i = start; i < end; i++)
-	{
-		/*Si l'élément courant est inférieur au pivot*/
-		if (array[i] <= pivot_value)
-		{
-			/*si l'indice 'j' est inférieur à'i', on échange les éléments.*/
-			if (j < i)
-			{
-				/*Échange le pivot avec l'élément à l'indice 'j'.*/
-				temp = array[j];
-				array[j] = array[i];
-				array[i] = temp;
-				print_array(array, size);
-			}
-			j++;
-		}
-	}
-	/*Si le pivot n'est pas déjà à sa place correcte*/
-	if (j != end)
-	{
-		temp = array[j];
-		array[j] = array[end];
-		array[end] = temp;
-		print_array(array, size);
-	}
-	/*Retourne l'indice du pivot après partitionnement.*/
-	return (j);
+  for (i = start; i < end; i++)
+  {
+    /*Si l'élément courant est inférieur au pivot*/
+    if (array[i] <= pivot_value)
+    {
+      /*si l'indice 'j' est inférieur à'i', on échange les éléments.*/
+      if (j < i)
+      {
+        /*Échange le pivot avec l'élément à l'indice 'j'.*/
+        temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+        print_array(array, size);
+      }
+      j++;
+    }
+  }
+  /*Si le pivot n'est pas déjà à sa place correcte*/
+  if (j != end)
+  {
+    temp = array[j];
+    array[j] = array[end];
+    array[end] = temp;
+    print_array(array, size);
+  }
+  /*Retourne l'indice du pivot après partitionnement.*/
+  return (j);
 }
 
 /**
@@ -55,17 +56,17 @@ int lomuto_partition(int *array, int start, int end, size_t size)
  */
 void quick_sort_recursive(int *array, int start, int end, size_t size)
 {
-	int pivot_index;
+  int pivot_index;
 
-	if (start < end)
-	{
-		/*Partitionne le tableau*/
-		pivot_index = lomuto_partition(array, start, end, size);
-		/*Trie la partie gauche*/
-		quick_sort_recursive(array, start, pivot_index - 1, size);
-		/*Trie la partie droite*/
-		quick_sort_recursive(array, pivot_index + 1, end, size);
-	}
+  if (start < end)
+  {
+    /*Partitionne le tableau*/
+    pivot_index = lomuto_partition(array, start, end, size);
+    /*Trie la partie gauche*/
+    quick_sort_recursive(array, start, pivot_index - 1, size);
+    /*Trie la partie droite*/
+    quick_sort_recursive(array, pivot_index + 1, end, size);
+  }
 }
 
 /**
@@ -76,9 +77,9 @@ void quick_sort_recursive(int *array, int start, int end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
+  if (array == NULL || size < 2)
+    return;
 
-	/*Appelle la fonction récursive avec les indices de début et de fin*/
-	quick_sort_recursive(array, 0, size - 1, size);
+  /*Appelle la fonction récursive avec les indices de début et de fin*/
+  quick_sort_recursive(array, 0, size - 1, size);
 }
