@@ -20,7 +20,7 @@ int lomuto_partition(int *array, int start, int end, size_t size)
 	for (i = start; i < end; i++)
 	{
 		/*Si l'élément courant est inférieur au pivot*/
-		if (array[i] < pivot_value)
+		if (array[i] <= pivot_value)
 		{
 			/*si l'indice 'j' est inférieur à'i', on échange les éléments.*/
 			if (j < i)
