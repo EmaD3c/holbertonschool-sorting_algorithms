@@ -10,10 +10,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *current, *temp;
 
 	if (list == NULL || *list == NULL)
-	{
 		return;
-	}
-
 	/* Commence au deuxième élément */
 	current = (*list)->next;
 
@@ -25,9 +22,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			/* Détacher current de sa position actuelle */
 			if (current->next != NULL)
-			{
 				current->next->prev = current->prev;
-			}
 
 			current->prev->next = current->next;
 
@@ -36,14 +31,10 @@ void insertion_sort_list(listint_t **list)
 			current->next = temp;
 
 			if (temp->prev != NULL)
-			{
 				temp->prev->next = current;
-			}
 
 			else
-			{
 				*list = current; /*Mise à jour de la tête si nécessaire*/
-			}
 
 			temp->prev = current;
 
