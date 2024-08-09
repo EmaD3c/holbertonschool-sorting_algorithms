@@ -8,7 +8,6 @@
  */
 void print_list(const listint_t *list)
 {
-<<<<<<< HEAD
   int i;
 
   i = 0;
@@ -22,18 +21,3 @@ void print_list(const listint_t *list)
   }
   printf("\n");
 }
-=======
-    int i;
-
-    i = 0;
-    while (list)
-    {
-        if (i > 0)
-            printf(", ");
-        printf("%d", list->n);
-        ++i;
-        list = list->next;
-    }
-    printf("\n");
-}
->>>>>>> Mariama
